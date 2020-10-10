@@ -30,7 +30,7 @@ def predict_api():
     data = request.get_json(force=True)
     prediction = model.predict([np.array(list(data.values()))])
 
-    output = int(prediction[0])
+    output = prediction[0]
     return jsonify(output)
 
 
